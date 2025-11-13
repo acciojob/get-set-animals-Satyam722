@@ -1,45 +1,48 @@
 // Animal Class
 class Animal {
-    private _species: string;
-
-    constructor(species: string) {
+    constructor(species) {
         this._species = species;
     }
 
     // Getter for species
-    get species(): string {
+    get species() {
         return this._species;
     }
 
     // Method to make sound
-    makeSound(): void {
+    makeSound() {
         console.log(`The ${this._species} makes a sound`);
     }
 }
 
 // Cat Class
 class Cat extends Animal {
-    constructor(species: string) {
+    constructor(species) {
         super(species);
     }
 
     // Method to purr
-    purr(): void {
+    purr() {
         console.log("purr");
     }
 }
 
 // Dog Class
 class Dog extends Animal {
-    constructor(species: string) {
+    constructor(species) {
         super(species);
     }
 
     // Method to bark
-    bark(): void {
+    bark() {
         console.log("woof");
     }
 }
+
+// Make classes available globally for Cypress tests
+window.Animal = Animal;
+window.Cat = Cat;
+window.Dog = Dog;
 // Do not change the code below this line
 window.Animal = Animal;
 window.Dog = Dog;
